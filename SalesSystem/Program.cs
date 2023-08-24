@@ -1,9 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using SalesSystem.Data;
+using System.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Add mysql database context
+var connectionStringMySql = builder.Configuration.GetConnectionString("SalesSystemContext");
 builder.Services.AddDbContext<SalesSystemContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("SalesSystemContext") ?? throw new InvalidOperationException("Connection string 'SalesSystemContext' not found.")));
+    options.UseMySql(connectionStringMySql, ServerVersion.Parse("8.0.34-mysql")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
