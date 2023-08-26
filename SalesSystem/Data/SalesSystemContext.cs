@@ -15,5 +15,7 @@ namespace SalesSystem.Data
         }
 
         public DbSet<SalesSystem.Models.Department> Department { get; set; } = default!;
+        public DbSet<SalesSystem.Models.Seller> Seller { get; set; } = default!;
+        public DbSet<SalesSystem.Models.SalesRecord> SalesRecord { get; set; } = default!;
     }
 }
