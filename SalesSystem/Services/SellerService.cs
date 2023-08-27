@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
-using SalesSystem.Models;
+using System.Linq;
 using SalesSystem.Data;
+using SalesSystem.Models;
 
 namespace SalesSystem.Services
 {
@@ -20,7 +21,6 @@ namespace SalesSystem.Services
 
         public void Insert(Seller seller)
         {
-            seller.Department = _context.Department.First();
             _context.Add(seller);
             _context.SaveChanges();
         }
