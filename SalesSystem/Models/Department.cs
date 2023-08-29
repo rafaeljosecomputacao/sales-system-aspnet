@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace SalesSystem.Models
@@ -7,6 +8,9 @@ namespace SalesSystem.Models
     public class Department
     {
         public int Id { get; set; }
+
+        [Required(ErrorMessage = "{0} required")]
+        [StringLength(20, MinimumLength = 4, ErrorMessage = "{0} size should be between {2} and {1}")]
         public string Name { get; set; }
         public ICollection<Seller> Sellers { get; set; } = new List<Seller>();
 
