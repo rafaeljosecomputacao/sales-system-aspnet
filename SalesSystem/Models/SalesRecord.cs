@@ -15,7 +15,6 @@ namespace SalesSystem.Models
         public DateTime Date { get; set; }
 
         [Required(ErrorMessage = "{0} required")]
-        [DataType(DataType.Currency)]
         [DisplayFormat(DataFormatString = "{0:F2}")]
         public double Amount { get; set; }
         public SaleStatus Status { get; set; }

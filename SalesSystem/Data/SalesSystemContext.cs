@@ -14,8 +14,16 @@ namespace SalesSystem.Data
         {
         }
 
-        public DbSet<Department> Department { get; set; } = default!;
-        public DbSet<Seller> Seller { get; set; } = default!;
-        public DbSet<SalesRecord> SalesRecord { get; set; } = default!;
+        public DbSet<Department> Department { get; set; }
+        public DbSet<Seller> Seller { get; set; } 
+        public DbSet<SalesRecord> SalesRecord { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<SalesRecord>()
+            .HasOne(p => p.Seller)
+            .WithMany(b => b.Sales)
+            .OnDelete(DeleteBehavior.Restrict);
+        }
     }
 }

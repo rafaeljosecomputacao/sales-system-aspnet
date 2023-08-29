@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SalesSystem.Data;
 
@@ -10,9 +11,10 @@ using SalesSystem.Data;
 namespace SalesSystem.Migrations
 {
     [DbContext(typeof(SalesSystemContext))]
-    partial class SalesSystemContextModelSnapshot : ModelSnapshot
+    [Migration("20230829091626_ThirdMigration")]
+    partial class ThirdMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,7 +34,7 @@ namespace SalesSystem.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Department", (string)null);
+                    b.ToTable("Department");
                 });
 
             modelBuilder.Entity("SalesSystem.Models.SalesRecord", b =>
@@ -57,7 +59,7 @@ namespace SalesSystem.Migrations
 
                     b.HasIndex("SellerId");
 
-                    b.ToTable("SalesRecord", (string)null);
+                    b.ToTable("SalesRecord");
                 });
 
             modelBuilder.Entity("SalesSystem.Models.Seller", b =>
@@ -88,7 +90,7 @@ namespace SalesSystem.Migrations
 
                     b.HasIndex("DepartmentId");
 
-                    b.ToTable("Seller", (string)null);
+                    b.ToTable("Seller");
                 });
 
             modelBuilder.Entity("SalesSystem.Models.SalesRecord", b =>
