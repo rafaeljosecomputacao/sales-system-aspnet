@@ -4,12 +4,19 @@
     ViewData["Title"] = "Error";
 }
 
-<h1 class="text-danger">@ViewData["Title"]</h1>
-<h2 class="text-danger">@Model.Message</h2>
+<h3 class="text-dark">@ViewData["Title"]</h3>
+<h4 class="text-secondary">@Model.Message</h4>
 
 @if (Model.ShowRequestId)
 {
-    <p>
-        <strong>Request ID:</strong> <code>@Model.RequestId</code>
+    <p class="text-secondary">
+        Request Id: <code class="text-danger">@Model.RequestId</code>
     </p>
 }
+
+<div>
+    <a class="btn btn-secondary" asp-action="Index">
+        Back to List
+        <i class="bi bi-arrow-left"></i>
+    </a>
+</div>
