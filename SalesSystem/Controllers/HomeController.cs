@@ -20,10 +20,6 @@ namespace SalesSystem.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "This solution is an online sales system.";
-            ViewData["Name"] = "Rafael José Gonçalves";
-            ViewData["Email"] = "rafaeljosecomputacao@gmail.com";
-
             return View();
         }
 
