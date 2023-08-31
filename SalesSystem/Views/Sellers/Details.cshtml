@@ -1,50 +1,56 @@
 ﻿@model SalesSystem.Models.Seller
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Details Seller";
 }
 
-<h2>@ViewData["Title"]</h2>
-
-<div>
-    <h4>Seller</h4>
+<div class="container">
+    <h3 class="text-dark">@ViewData["Title"]</h3>
     <hr />
+</div>
 
-    <dl>
-        <dt>
+<div class="container">
+    <dl class="row">
+        <dt class="col-sm-2 text-dark">
             @Html.DisplayNameFor(model => model.Name)
         </dt>
-        <dd>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Name)
         </dd>
-        <dt>
+        <dt class="col-sm-2 text-dark">
             @Html.DisplayNameFor(model => model.Email)
         </dt>
-        <dd>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Email)
         </dd>
-        <dt>
+        <dt class="col-sm-2 text-dark">
             @Html.DisplayNameFor(model => model.BirthDate)
         </dt>
-        <dd>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.BirthDate)
         </dd>
-        <dt>
+        <dt class="col-sm-2 text-dark">
             @Html.DisplayNameFor(model => model.BaseSalary)
         </dt>
-        <dd>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.BaseSalary)
         </dd>
-        <dt>
+        <dt class="col-sm-2 text-dark">
             @Html.DisplayNameFor(model => model.Department)
         </dt>
-        <dd>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Department.Name)
         </dd>
     </dl>
 </div>
 
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-secondary">Edit</a>
-    <a asp-action="Index">Back to List</a>
+<div class="container">
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">
+        Edit
+        <i class="bi bi-pencil"></i>
+    </a>
+    <a asp-action="Index" class="btn btn-secondary">
+        Back to List
+        <i class="bi bi-arrow-left"></i>
+    </a>
 </div>
